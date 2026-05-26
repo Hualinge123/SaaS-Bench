@@ -1,0 +1,7 @@
+# Build-generated assets from packages/web/public (copied at build time)
+public/images/
+public/icons/
+public/avatars/
+
+dist/
+.vite/

@@ -1,0 +1,25 @@
+# OfficeClaw — CODEOWNERS
+# Each line is a file pattern followed by one or more owners.
+# Order matters — later matches take precedence.
+
+# Default: maintainer team
+*                           @zts212653
+
+# Core packages — require maintainer review
+packages/api/               @zts212653
+packages/shared/            @zts212653
+packages/mcp-server/        @zts212653
+
+# Frontend
+packages/web/               @zts212653
+
+# Skills and governance
+office-claw-skills/         @zts212653
+
+# CI and scripts
+.github/                    @zts212653
+scripts/                    @zts212653
+
+# Configuration
+office-claw-config.json     @zts212653
+sync-manifest.yaml          @zts212653

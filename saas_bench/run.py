@@ -20,8 +20,6 @@ from datetime import datetime
 from pathlib import Path
 
 import yaml
-
-from saas_bench.agent import run_task
 from saas_bench.loader import build_prompt, load_tasks
 from saas_bench.reporting import generate_outputs
 from saas_bench.slot import SlotManager
@@ -95,6 +93,7 @@ def _run_one(
     task: dict,
     slot_id: int,
     apps_config: dict,
+    agent_type: str,
     model: str,
     result_dir: str,
     max_steps: int,
@@ -105,6 +104,13 @@ def _run_one(
 ) -> dict:
     """Full execution of a single task (runs in a thread pool, owns its own asyncio event loop)."""
     import asyncio
+
+    if agent_type == "browser-use":
+        from saas_bench.agent import run_task
+    elif agent_type == "relay-claw":
+        from saas_bench.relay_claw_agent import run_task
+    else:
+        raise ValueError(f"Unsupported agent_type: {agent_type}")
 
     run_suffix = f"_r{run_idx}"
     sites: list[str] = task.get("meta", {}).get("meta_data", {}).get("sites", [])
@@ -181,6 +187,7 @@ def _run_task_all_runs(
     task: dict,
     slot_id: int,
     apps_config: dict,
+    agent_type: str,
     model: str,
     result_dir: str,
     max_steps: int,
@@ -194,7 +201,7 @@ def _run_task_all_runs(
     results = []
     for run_idx in range(run_start, run_start + runs):
         result = _run_one(
-            task, slot_id, apps_config, model, result_dir,
+            task, slot_id, apps_config, agent_type, model, result_dir,
             max_steps, hostname, use_isolation, run_idx, tasks_dir,
         )
         results.append(result)
@@ -203,6 +210,7 @@ def _run_task_all_runs(
 
 def main(
     tasks_dir: str,
+    agent_type: str,
     model: str,
     workers: int,
     result_dir: str,
@@ -247,7 +255,7 @@ def main(
             pool.submit(
                 _run_task_all_runs, task,
                 i % workers,
-                apps_config, model,
+                apps_config, agent_type, model,
                 result_dir, max_steps, hostname, use_isolation,
                 run_start, runs, tasks_dir,
             ): task
@@ -340,6 +348,7 @@ def parse_args() -> argparse.Namespace:
     p = argparse.ArgumentParser(description="SaaS-Bench eval harness")
     p.add_argument("--tasks-dir", required=True,
                    help="Task directory root (containing Software/ Business/ Healthcare/ Teamwork/ subdirectories)")
+    p.add_argument("--agent", choices=["browser-use", "relay-claw"], default="browser-use")
     p.add_argument("--model", default="qwen/qwen3.6-plus")
     p.add_argument("--workers", type=int, default=3)
     p.add_argument("--result-dir", default="results")
@@ -363,6 +372,7 @@ if __name__ == "__main__":
     args = parse_args()
     main(
         tasks_dir    = args.tasks_dir,
+        agent_type   = args.agent,
         model        = args.model,
         workers      = args.workers,
         result_dir   = args.result_dir,

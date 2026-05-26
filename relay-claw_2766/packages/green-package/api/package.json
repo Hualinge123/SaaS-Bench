@@ -1,0 +1,63 @@
+{
+  "name": "@office-claw/green-package",
+  "version": "0.1.0",
+  "type": "module",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./auth": {
+      "import": "./dist/auth/index.js",
+      "types": "./dist/auth/index.d.ts"
+    },
+    "./providers-plugin": {
+      "import": "./dist/providers-plugin.js",
+      "types": "./dist/providers-plugin.d.ts"
+    },
+    "./integrations": {
+      "import": "./dist/integrations/huawei-maas.js",
+      "types": "./dist/integrations/huawei-maas.d.ts"
+    },
+    "./utils": {
+      "import": "./dist/utils/signer.js",
+      "types": "./dist/utils/signer.d.ts"
+    },
+    "./metrics": {
+      "import": "./dist/metrics/aom-access-code-client.js",
+      "types": "./dist/metrics/aom-access-code-client.d.ts"
+    },
+    "./metrics-plugin": {
+      "import": "./dist/metrics-plugin.js",
+      "types": "./dist/metrics-plugin.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "prepare": "tsc",
+    "dev": "tsc --watch",
+    "clean": "rm -rf dist",
+    "lint": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "@openjiuwen/relay-api-server-contracts": ">=1.0.0"
+  },
+  "dependencies": {
+    "undici": "^7.21.0"
+  },
+  "devDependencies": {
+    "@openjiuwen/relay-api-server-contracts": "workspace:*",
+    "typescript": "^5.3.3"
+  }
+}

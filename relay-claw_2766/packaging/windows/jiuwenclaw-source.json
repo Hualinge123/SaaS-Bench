@@ -1,0 +1,12 @@
+{
+  "repoUrl": "https://gitcode.com/openJiuwen/jiuwenclaw.git",
+  "ref": "enterprise_dev",
+  "targetDir": "vendor/jiuwenclaw",
+  "requiredFiles": [
+    "pyproject.toml",
+    "jiuwenclaw/app.py",
+    "scripts/jiuwenclaw.spec",
+    "scripts/build-exe.ps1",
+    "scripts/jiuwenclaw_exe_entry.py"
+  ]
+}

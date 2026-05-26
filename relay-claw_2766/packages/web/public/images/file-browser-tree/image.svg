@@ -1,0 +1,12 @@
+<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none">
+  <!-- 文件外框（与 public-file.svg 同款折角文件形）-->
+  <path d="M9.667 0.667L3.833 0.667C2.727 0.667 1.833 1.56 1.833 2.667L1.833 13.333C1.833 14.44 2.727 15.333 3.833 15.333L12.167 15.333C13.27 15.333 14.167 14.44 14.167 13.333L14.167 4.667L9.667 0.667Z" stroke="rgb(128,128,128)" stroke-linejoin="round" stroke-width="0.887" fill="none"/>
+  <!-- 折角 -->
+  <path d="M9.667 0.667L9.667 4C9.667 4.553 10.113 5 10.667 5L14.167 5" stroke="rgb(128,128,128)" stroke-linejoin="round" stroke-width="0.887" fill="none"/>
+  <!-- 图片区域圆角矩形 -->
+  <rect x="3.5" y="6.5" width="9" height="6.5" rx="0.8" stroke="rgb(128,128,128)" stroke-width="0.75" fill="none"/>
+  <!-- 小太阳圆圈 -->
+  <circle cx="5.5" cy="8.5" r="0.9" stroke="rgb(128,128,128)" stroke-width="0.7" fill="none"/>
+  <!-- 山峰折线 -->
+  <polyline points="3.5,13 6,10 8,11.5 10,9.5 12.5,13" stroke="rgb(128,128,128)" stroke-width="0.75" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
+</svg>

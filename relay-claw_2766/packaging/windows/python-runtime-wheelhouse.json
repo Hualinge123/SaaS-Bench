@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "pythonTarget": {
+    "platform": "win_amd64",
+    "pythonVersion": "3.13",
+    "implementation": "cp",
+    "abi": "cp313"
+  },
+  "groups": [
+    {
+      "id": "shared-runtime",
+      "description": "Shared Python runtime dependencies for the Windows bundle",
+      "packages": [
+        "setuptools",
+        "wheel",
+        "httpx>=0.27.0",
+        "python-pptx",
+        "openpyxl",
+        "python-docx",
+        "requests",
+        "pillow",
+        "PyYAML",
+        "xlsxwriter",
+        "pypdf",
+        "pdfplumber",
+        "pandas",
+        "reportlab",
+        "markitdown"
+      ],
+      "localProjects": [
+        {
+          "path": "vendor/jiuwenclaw",
+          "dependenciesFromPyproject": true,
+          "wheelArgs": ["--no-deps"]
+        }
+      ]
+    }
+  ]
+}

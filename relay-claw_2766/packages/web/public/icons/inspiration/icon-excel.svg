@@ -1,0 +1,14 @@
+<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24.000000" height="24.000000" fill="none" customFrame="#000000">
+	<rect id="ic_Excel" width="24.000000" height="24.000000" x="0.000000" y="0.000000" />
+	<rect id="矩形" width="24.000000" height="24.000000" x="0.000000" y="0.000000" />
+	<g id="ic_normal_white_grid_xls">
+		<path id="矩形备份-77" d="M15.4995 2.00098L20.7495 7.25098L16.6424 7.25098C16.0112 7.25098 15.4995 6.7393 15.4995 6.10812L15.4995 2.00098L15.4995 2.00098Z" fill="rgb(126,237,193)" fill-rule="evenodd" />
+		<path id="矩形备份-23" d="M15.5735 2.00098L15.5645 6.10562C15.5631 6.7368 16.0737 7.24959 16.7049 7.25098L20.812 7.25098L20.812 20.001C20.812 21.1055 19.9166 22.001 18.812 22.001L5.31201 22.001C4.20744 22.001 3.31201 21.1055 3.31201 20.001L3.31201 4.00098C3.31201 2.89641 4.20744 2.00098 5.31201 2.00098L15.5735 2.00098L15.5735 2.00098Z" fill="rgb(6,187,115)" fill-rule="evenodd" />
+		<g id="编组-3">
+			<g id="编组-2">
+				<path id="路径-5" d="M0 0L7.33601 0" stroke="rgb(255,255,255)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.08333337" transform="matrix(0.573677,0.819082,-0.819082,0.573677,9.87012,11.0537)" />
+				<path id="路径-5" d="M0 0L7.33601 0" stroke="rgb(255,255,255)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.08333337" transform="matrix(-0.573677,0.819082,-0.819082,-0.573677,14.1592,11.0845)" />
+			</g>
+		</g>
+	</g>
+</svg>

@@ -1,0 +1,14 @@
+{
+  "name": "@office-claw/green-package-runtime",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev:b": "node ./scripts/dev-green-package.mjs dev:b",
+    "dev:f": "node ./scripts/dev-green-package.mjs dev:f",
+    "dev": "node ./scripts/dev-green-package.mjs dev"
+  },
+  "dependencies": {
+    "@openjiuwen/relay-web": "workspace:*"
+  }
+}

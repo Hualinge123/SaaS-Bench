@@ -1,0 +1,78 @@
+{
+  "name": "@openjiuwen/relay-api-server-contracts",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Plugin contracts for OfficeClaw extensions: auth, storage, identity.",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./auth": {
+      "import": "./dist/auth.js",
+      "types": "./dist/auth.d.ts"
+    },
+    "./runtime-env": {
+      "import": "./dist/runtime-env.js",
+      "types": "./dist/runtime-env.d.ts"
+    },
+    "./identity": {
+      "import": "./dist/identity.js",
+      "types": "./dist/identity.d.ts"
+    },
+    "./catalog": {
+      "import": "./dist/catalog.js",
+      "types": "./dist/catalog.d.ts"
+    },
+    "./storage": {
+      "import": "./dist/storage/index.js",
+      "types": "./dist/storage/index.d.ts"
+    },
+    "./evidence": {
+      "import": "./dist/evidence.js",
+      "types": "./dist/evidence.d.ts"
+    },
+    "./scheduler": {
+      "import": "./dist/scheduler.js",
+      "types": "./dist/scheduler.d.ts"
+    },
+    "./metrics": {
+      "import": "./dist/metrics.js",
+      "types": "./dist/metrics.d.ts"
+    },
+    "./telemetry-provider": {
+      "import": "./dist/telemetry-provider.js",
+      "types": "./dist/telemetry-provider.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "pnpm clean && tsc",
+    "prepare": "tsc",
+    "dev": "tsc --watch",
+    "clean": "node -e \"require('fs').rmSync('dist',{recursive:true,force:true})\"",
+    "lint": "tsc --noEmit",
+    "prepublishOnly": "tsc"
+  },
+  "peerDependencies": {
+    "@openjiuwen/relay-shared": ">=1.0.0",
+    "@opentelemetry/sdk-trace-base": ">=1.0.0",
+    "@opentelemetry/sdk-metrics": ">=1.0.0",
+    "@opentelemetry/resources": ">=1.0.0",
+    "@opentelemetry/instrumentation": ">=0.50.0"
+  },
+  "devDependencies": {
+    "@openjiuwen/relay-shared": "workspace:*",
+    "typescript": "^5.3.3"
+  }
+}

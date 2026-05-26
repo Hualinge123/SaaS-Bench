@@ -26,6 +26,7 @@ apps:
     container_port: 8080
     start: >-
       docker run -d --name {container}
+      --platform linux/amd64
       -e PASSWORD=8a128206e2177bce1e48e565 -u 0
       -p {port}:8080
       code-server-bundle:latest
@@ -36,7 +37,7 @@ apps:
     app_index: 1
     fixed_port: 6047
     container_port: 80
-    start: "docker run -d --name {container} -p {port}:80 -e OPENPROJECT_HOST__NAME={hostname}:{port} -e OPENPROJECT_HTTPS=false -e SECRET_KEY_BASE=secret mw-openproject:latest"
+    start: "docker run -d --platform linux/amd64 --name {container} -p {port}:80 -e OPENPROJECT_HOST__NAME={hostname}:{port} -e OPENPROJECT_HTTPS=false -e SECRET_KEY_BASE=secret mw-openproject:latest"
     health_path: "/health_checks/default"
     startup_wait: 360
 
@@ -53,7 +54,7 @@ apps:
     fixed_port: 6009
     container_port: 6806
     pg_port_offset: 15  # Expose internal Postgres: pg_port = port + 15 (must stay within slot_offset=20)
-    start: "docker run -d --name {container} -p {port}:6806 -p {pg_port}:5432 -e BASEROW_PUBLIC_URL=http://{hostname}:{port} mw-baserow:latest"
+    start: "docker run -d --platform linux/amd64 --name {container} -p {port}:6806 -p {pg_port}:5432 -e BASEROW_PUBLIC_URL=http://{hostname}:{port} mw-baserow:latest"
     health_path: "/login"
     startup_wait: 600
 

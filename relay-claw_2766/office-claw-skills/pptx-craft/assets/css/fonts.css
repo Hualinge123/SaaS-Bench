@@ -1,0 +1,41 @@
+/**
+ * 本地字体声明
+ * 使用思源黑体（Noto Sans SC）作为默认中文字体
+ */
+
+/* 思源黑体 - 常规 */
+@font-face {
+  font-family: 'Noto Sans SC';
+  src: url('https://cdn.digitalhumanai.top/slidagent/pptx-craft/assets/fonts/NotoSansSC/NotoSansSC-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 思源黑体 - 中等 */
+@font-face {
+  font-family: 'Noto Sans SC';
+  src: url('https://cdn.digitalhumanai.top/slidagent/pptx-craft/assets/fonts/NotoSansSC/NotoSansSC-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 思源黑体 - 粗体 */
+@font-face {
+  font-family: 'Noto Sans SC';
+  src: url('https://cdn.digitalhumanai.top/slidagent/pptx-craft/assets/fonts/NotoSansSC/NotoSansSC-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 思源黑体 - 细体 */
+@font-face {
+  font-family: 'Noto Sans SC';
+  src: url('https://cdn.digitalhumanai.top/slidagent/pptx-craft/assets/fonts/NotoSansSC/NotoSansSC-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
